@@ -1,7 +1,9 @@
 import React from "react";
 import HeroesContainers from "./components/HeroesContainers";
 import MoviesContainers from "./components/MoviesContainers";
+import MoviesListPage from "./components/MoviesListPage";
 import MoviesByHero from "./components/MoviesByHero";
+import HeroesByMovie from "./components/HeroesByMovie";
 import { Route, Link, withRouter } from "react-router-dom";
 import { search } from "./reducers/searchs";
 import { connect } from "react-redux";
@@ -35,8 +37,9 @@ const App = ({ search, onChange }) =>
     />
 
     <Route exact path="/" component={HeroesContainers} />
-    <Route path="/movies" component={MoviesContainers} />
+    <Route path="/movies" component={MoviesListPage} />
     <Route path="/movie/:id" component={MoviesByHero} />
+    <Route path="/heroes/:id" component={HeroesByMovie} />
   </div>;
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

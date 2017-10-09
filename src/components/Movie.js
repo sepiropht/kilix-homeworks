@@ -8,6 +8,7 @@ const Movie = ({ hero }) => {
     <div>
       {(hero.movies || []).map((movie, i) =>
         <div key={movie.id}>
+          <Link to={"/heroes/" + movie.id}> heroes for this movies </Link>
           {movie.name}
         </div>
       )}
