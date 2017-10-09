@@ -16,10 +16,16 @@ export default function Searchs(state = initialState, action) {
       if (Number(action.payload) - Number(action.payload) === 0)
         return {
           typeSearch: "id",
+          variables: {
+            id: action.payload
+          },
           searchKeyWord: action.payload
         };
       return {
         typeSearch: "text",
+        variables: {
+          search: action.payload
+        },
         searchKeyWord: action.payload
       };
   }

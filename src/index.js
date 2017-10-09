@@ -4,18 +4,13 @@ import "./index.css";
 import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 import createHistory from "history/createBrowserHistory";
-import {
-  ConnectedRouter,
-  routerReducer,
-  routerMiddleware,
-  push
-} from "react-router-redux";
+import { ConnectedRouter, routerReducer } from "react-router-redux";
 import { combineReducers } from "redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import Searchs from "./reducers/searchs";
-const preloadedState = window.__PRELOADED_STATE__;
+
 const history = createHistory();
 
 const app = combineReducers({
@@ -27,7 +22,9 @@ const app = combineReducers({
 const store = createStore(app);
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <ConnectedRouter history={history}>
+      <App />
+    </ConnectedRouter>
   </Provider>,
   document.getElementById("root")
 );

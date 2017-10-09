@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 5c44657938d5d36fcdcab91a74a1e2c6
+ * @relayHash 38d7907cd21997b32cbc5a7b73ad2c70
  */
 
 /* eslint-disable */
@@ -16,10 +16,8 @@ export type HeroesListPageQueryResponse = {|
 
 
 /*
-query HeroesListPageQuery(
-  $search: String
-) {
-  heroes(search: $search) {
+query HeroesListPageQuery {
+  heroes {
     ...Heroes_heroes
     id
   }
@@ -38,14 +36,7 @@ fragment Hero_hero on Hero {
 
 const batch /*: ConcreteBatch*/ = {
   "fragment": {
-    "argumentDefinitions": [
-      {
-        "kind": "LocalArgument",
-        "name": "search",
-        "type": "String",
-        "defaultValue": null
-      }
-    ],
+    "argumentDefinitions": [],
     "kind": "Fragment",
     "metadata": null,
     "name": "HeroesListPageQuery",
@@ -53,14 +44,7 @@ const batch /*: ConcreteBatch*/ = {
       {
         "kind": "LinkedField",
         "alias": null,
-        "args": [
-          {
-            "kind": "Variable",
-            "name": "search",
-            "variableName": "search",
-            "type": "String"
-          }
-        ],
+        "args": null,
         "concreteType": "Hero",
         "name": "heroes",
         "plural": true,
@@ -81,14 +65,7 @@ const batch /*: ConcreteBatch*/ = {
   "metadata": {},
   "name": "HeroesListPageQuery",
   "query": {
-    "argumentDefinitions": [
-      {
-        "kind": "LocalArgument",
-        "name": "search",
-        "type": "String",
-        "defaultValue": null
-      }
-    ],
+    "argumentDefinitions": [],
     "kind": "Root",
     "name": "HeroesListPageQuery",
     "operation": "query",
@@ -96,14 +73,7 @@ const batch /*: ConcreteBatch*/ = {
       {
         "kind": "LinkedField",
         "alias": null,
-        "args": [
-          {
-            "kind": "Variable",
-            "name": "search",
-            "variableName": "search",
-            "type": "String"
-          }
-        ],
+        "args": null,
         "concreteType": "Hero",
         "name": "heroes",
         "plural": true,
@@ -140,7 +110,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query HeroesListPageQuery(\n  $search: String\n) {\n  heroes(search: $search) {\n    ...Heroes_heroes\n    id\n  }\n}\n\nfragment Heroes_heroes on Hero {\n  ...Hero_hero\n}\n\nfragment Hero_hero on Hero {\n  id\n  description\n  alias\n}\n"
+  "text": "query HeroesListPageQuery {\n  heroes {\n    ...Heroes_heroes\n    id\n  }\n}\n\nfragment Heroes_heroes on Hero {\n  ...Hero_hero\n}\n\nfragment Hero_hero on Hero {\n  id\n  description\n  alias\n}\n"
 };
 
 module.exports = batch;
