@@ -10,14 +10,12 @@ const App = () =>
           <Link to="/">All Heroes</Link>
         </li>
         <li>
-          <Link to="/about">Heroes by Name</Link>
-        </li>
-        <li>
-          <Link to="/topics">Topics</Link>
+          <Link to="/movies">All Movies</Link>
         </li>
       </ul>
 
       <hr />
+      <input type={"text"} placeholder={"type what you want"} />
       <Route exact path="/" component={HeroesListPage} />
     </div>
   </Router>;

@@ -3,17 +3,34 @@ import { QueryRenderer, graphql } from "react-relay";
 import environment from "../Environment";
 import Heroes from "./Heroes";
 
-const HeroesListPageQuery = graphql`
-  query HeroesListPageQuery {
-    heroes {
-      ...Heroes_heroes
+const HeroesListPageQuery = {
+  text: graphql`
+    query HeroesListPageQuery($search: String) {
+      heroes(search: $search) {
+        ...Heroes_heroes
+      }
     }
-  }
-`;
-const HeroesListPage = () =>
+  `,
+  id: graphql`
+    query HeroesListPageQuery($heroID: ID!) {
+      heroes(id: $heroID) {
+        ...Heroes_heroes
+      }
+    }
+  `,
+  all: graphql`
+    query HeroesListPageQuery {
+      heroes {
+        ...Heroes_heroes
+      }
+    }
+  `
+};
+const HeroesListPage = ({ variable }) =>
   <QueryRenderer
     environment={environment}
-    query={HeroesListPageQuery}
+    query={HeroesListPageQuery.text}
+    variables={{ search: "batman" }}
     render={({ error, props }) => {
       if (error) {
         return (
@@ -22,7 +39,6 @@ const HeroesListPage = () =>
           </div>
         );
       } else if (props) {
-        console.log(props);
         return <Heroes heroes={props.heroes} />;
       }
       return <div>Loading</div>;
