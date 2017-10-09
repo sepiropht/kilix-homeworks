@@ -3,7 +3,8 @@ import { createFragmentContainer, graphql } from "react-relay";
 
 const Hero = ({ hero }) =>
   <div>
-    {" "}{hero.alias}{" "}
+    show all movies of this hero
+    {hero.alias}
   </div>;
 
 export default createFragmentContainer(

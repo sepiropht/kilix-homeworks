@@ -28,6 +28,7 @@ export default function Searchs(state = initialState, action) {
         },
         searchKeyWord: action.payload
       };
+    default:
+      return initialState;
   }
-  return initialState;
 }

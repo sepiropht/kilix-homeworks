@@ -8,35 +8,22 @@ const mapStateToProps = state => ({
   searchs: state.Searchs
 });
 
-const HeroesListPageQuery = {
+const HeroesFilterQuery = {
   text: graphql`
-    query HeroesListPageQuery($search: String) {
+    query HeroesFilterQuery($search: String) {
       heroes(search: $search) {
-        ...Heroes_heroes
-      }
-    }
-  `,
-  id: graphql`
-    query HeroesListPageQuery($heroID: ID!) {
-      heroes(id: $heroID) {
-        ...Heroes_heroes
-      }
-    }
-  `,
-  all: graphql`
-    query HeroesListPageQuery {
-      heroes {
         ...Heroes_heroes
       }
     }
   `
 };
-const HeroesListPage = ({ searchs }) => {
+const HeroesFilter = ({ searchs }) => {
+  console.log("filterComponent", searchs);
   return (
     <QueryRenderer
       environment={environment}
-      query={HeroesListPageQuery[searchs.typeSearch]}
-      variables={searchs.variable}
+      query={HeroesFilterQuery[searchs.typeSearch]}
+      variables={searchs.variables}
       render={({ error, props }) => {
         if (error) {
           return (
@@ -52,4 +39,4 @@ const HeroesListPage = ({ searchs }) => {
     />
   );
 };
-export default connect(mapStateToProps)(HeroesListPage);
+export default connect(mapStateToProps)(HeroesFilter);

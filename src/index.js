@@ -6,7 +6,6 @@ import registerServiceWorker from "./registerServiceWorker";
 import createHistory from "history/createBrowserHistory";
 import { ConnectedRouter, routerReducer } from "react-router-redux";
 import { combineReducers } from "redux";
-import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import Searchs from "./reducers/searchs";
