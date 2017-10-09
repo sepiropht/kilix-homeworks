@@ -1,6 +1,7 @@
 import React from "react";
 import HeroesContainers from "./components/HeroesContainers";
-import { Route, Link } from "react-router-dom";
+import MoviesContainers from "./components/MoviesContainers";
+import { Route, Link, withRouter } from "react-router-dom";
 import { search } from "./reducers/searchs";
 import { connect } from "react-redux";
 const mapStateToProps = state => ({
@@ -24,7 +25,6 @@ const App = ({ search, onChange }) =>
         <Link to="/movies">All Movies</Link>
       </li>
     </ul>
-
     <hr />
     <input
       type={"text"}
@@ -33,6 +33,7 @@ const App = ({ search, onChange }) =>
       onChange={e => onChange(e.target.value)}
     />
     <Route exact path="/" component={HeroesContainers} />
+    <Route path="/movies" component={MoviesContainers} />
   </div>;
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
