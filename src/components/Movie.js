@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 const Movie = ({ hero }) => {
   console.log("movie componennt", hero);
   return (
-    <div>
+    <div className="movie">
       {(hero.movies || []).map((movie, i) =>
         <div key={movie.id}>
-          <Link to={"/heroes/" + movie.id}> heroes for this movies </Link>
-          {movie.name}
+          <Link to={"/heroes/" + movie.id}>
+            {movie.name}
+          </Link>
         </div>
       )}
     </div>

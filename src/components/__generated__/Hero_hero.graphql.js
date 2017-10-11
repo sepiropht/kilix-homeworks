@@ -12,6 +12,7 @@ export type Hero_hero = {|
   +id: ?string;
   +description: ?string;
   +alias: string;
+  +picture: ?string;
 |};
 */
 
@@ -41,6 +42,13 @@ const fragment /*: ConcreteFragment*/ = {
       "alias": null,
       "args": null,
       "name": "alias",
+      "storageKey": null
+    },
+    {
+      "kind": "ScalarField",
+      "alias": null,
+      "args": null,
+      "name": "picture",
       "storageKey": null
     }
   ],

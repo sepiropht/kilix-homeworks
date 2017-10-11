@@ -3,8 +3,8 @@ import Hero from "./Hero";
 import { createFragmentContainer, graphql } from "react-relay";
 
 const Heroes = ({ heroes }) =>
-  <div>
-    {" "}{(heroes || []).map(hero => <Hero key={hero.__id} hero={hero} />)}{" "}
+  <div className="heroes">
+    {(heroes || []).map(hero => <Hero key={hero.__id} hero={hero} />)}
   </div>;
 
 export default createFragmentContainer(

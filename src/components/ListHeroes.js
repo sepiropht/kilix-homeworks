@@ -5,7 +5,7 @@ import { SingleHero } from "./Hero";
 const ListHeroes = props => {
   console.log("listHeroes", props);
   return (
-    <div>
+    <div className="heroes">
       {(props.movie.heroes || [])
         .map((hero, index) => <SingleHero key={hero.id} hero={hero} />)}
     </div>
@@ -21,6 +21,7 @@ export default createFragmentContainer(
         id
         description
         alias
+        picture
       }
     }
   `

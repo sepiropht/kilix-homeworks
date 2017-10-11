@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash bc094670c452c95e83bf8e9c5894edaf
+ * @relayHash bfe00fb3d1efb0f19f5d48f02425fb28
  */
 
 /* eslint-disable */
@@ -31,6 +31,7 @@ fragment ListHeroes_movie on Movie {
     id
     description
     alias
+    picture
   }
 }
 */
@@ -142,6 +143,13 @@ const batch /*: ConcreteBatch*/ = {
                 "args": null,
                 "name": "alias",
                 "storageKey": null
+              },
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "args": null,
+                "name": "picture",
+                "storageKey": null
               }
             ],
             "storageKey": null
@@ -151,7 +159,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query HeroesByMovieQuery(\n  $id: ID!\n) {\n  movie(id: $id) {\n    ...ListHeroes_movie\n    id\n  }\n}\n\nfragment ListHeroes_movie on Movie {\n  id\n  heroes {\n    id\n    description\n    alias\n  }\n}\n"
+  "text": "query HeroesByMovieQuery(\n  $id: ID!\n) {\n  movie(id: $id) {\n    ...ListHeroes_movie\n    id\n  }\n}\n\nfragment ListHeroes_movie on Movie {\n  id\n  heroes {\n    id\n    description\n    alias\n    picture\n  }\n}\n"
 };
 
 module.exports = batch;

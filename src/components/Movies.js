@@ -3,7 +3,7 @@ import Movie from "./Movie";
 import { createFragmentContainer, graphql } from "react-relay";
 
 const Movies = ({ heroes }) =>
-  <div>
+  <div className="movies">
     {(heroes || []).map(hero => <Movie key={hero.__id} hero={hero} />)}
   </div>;
 

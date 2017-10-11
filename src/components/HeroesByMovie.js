@@ -1,5 +1,5 @@
 import React from "react";
-import { createFragmentContainer, QueryRenderer, graphql } from "react-relay";
+import { QueryRenderer, graphql } from "react-relay";
 import environment from "../Environment";
 import Movies from "./Movies";
 import { connect } from "react-redux";

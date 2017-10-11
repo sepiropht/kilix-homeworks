@@ -4,9 +4,12 @@ import { Link } from "react-router-dom";
 
 const Hero = ({ hero }) => <SingleHero hero={hero} />;
 export const SingleHero = ({ hero }) =>
-  <div>
-    <Link to={"/movie/" + hero.id}> movie </Link>
-    {hero.alias}
+  <div className="hero">
+    <Link to={"/movie/" + hero.id}> Films où il apparaît </Link>
+    <img src={hero.picture} alt="hero" />
+    <span>
+      {hero.alias}
+    </span>
   </div>;
 export default createFragmentContainer(
   Hero,
@@ -15,6 +18,7 @@ export default createFragmentContainer(
       id
       description
       alias
+      picture
     }
   `
 );

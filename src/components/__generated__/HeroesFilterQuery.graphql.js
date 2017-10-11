@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash c5bd3eaab708300437ea34318f1bc07c
+ * @relayHash 9dd7994e928b8360a12a911fb59ab6fa
  */
 
 /* eslint-disable */
@@ -33,6 +33,7 @@ fragment Hero_hero on Hero {
   id
   description
   alias
+  picture
 }
 */
 
@@ -132,6 +133,13 @@ const batch /*: ConcreteBatch*/ = {
                 "args": null,
                 "name": "alias",
                 "storageKey": null
+              },
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "args": null,
+                "name": "picture",
+                "storageKey": null
               }
             ]
           }
@@ -140,7 +148,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query HeroesFilterQuery(\n  $search: String\n) {\n  heroes(search: $search) {\n    ...Heroes_heroes\n    id\n  }\n}\n\nfragment Heroes_heroes on Hero {\n  ...Hero_hero\n}\n\nfragment Hero_hero on Hero {\n  id\n  description\n  alias\n}\n"
+  "text": "query HeroesFilterQuery(\n  $search: String\n) {\n  heroes(search: $search) {\n    ...Heroes_heroes\n    id\n  }\n}\n\nfragment Heroes_heroes on Hero {\n  ...Hero_hero\n}\n\nfragment Hero_hero on Hero {\n  id\n  description\n  alias\n  picture\n}\n"
 };
 
 module.exports = batch;

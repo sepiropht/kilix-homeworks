@@ -1,28 +1,142 @@
-.App {
-  text-align: center;
+body {
+    font: 300 15px/1.2 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #0e82de;
+    margin: 20px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+a:link {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+a:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
 }
 
-.App-title {
-  font-size: 1.5em;
+h1 {
+    margin-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 55px;
+    font-weight: 100;
+    letter-spacing: 30px;
+    text-shadow: 3px 3px 5px #000;
 }
 
-.App-intro {
-  font-size: large;
+nav ul {
+    list-style: none;
+    padding: 0 0 0 10px;
+    min-width: 460px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+nav li {
+    float: left;
+    position: relative;
+    height: 30px;
+    border-radius: 10px 30px 0 0;
+    margin-left: -10px;
+    text-shadow: 1px 1px 0 #bbb;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+    transition: .2s;
+}
+
+nav a {
+    display: block;
+    position: relative;
+    width: 90px;
+    height: 20px;
+    padding: 6px 10px 20px 0;
+    border-radius: 10px 30px 0 0;
+    background: #999;
+    color: #444;
+    text-align: center;
+    text-decoration: none;
+    transition: .2s;
+}
+
+nav li:hover {
+    z-index: 1;
+}
+
+nav li:hover a {
+    background: #ccc;
+    color: #000;
+}
+
+input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 30%;
+    border: none;
+    border-bottom: 1px solid #757575;
+    border-radius: 5px;
+}
+
+.selected a {
+    z-index: 3;
+    background: #fff;
+    color: #000;
+    text-shadow: none;
+    font-weight: 500;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    clear: both;
+    min-width: 420px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+    background: #962525;
+}
+
+.heroes {
+    display: flex;
+    flex-direction: horizontal;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: center;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.hero img {
+    width: 240px;
+    height: 250px;
+    border-radius: 5px;
+}
+
+span {
+    font-size: 20px;
+    color: #ffeb3b;
+}
+
+.hero a {
+    color: white;
+    font-size: 17px;
+}
+
+.movies {
+    font-size: 20px;
+}
+
+.movie a {
+    font-size: 20px;
+    color: #ffeb3b;
+}
+
+@media only screen and (max-width: 600px) {
+    input {
+        width: 100%;
+    }
 }
